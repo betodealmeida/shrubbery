@@ -1,0 +1,7 @@
+I consider Shrubbery to be pretty much finished, and I plan to keep
+it simple. Here's a small list of things I could do on future
+versions::
+
+ - Change ``apply`` to work with an element, not a copy.
+ - Make it faster.
+ - Remove dependency on BeautifulSoup.

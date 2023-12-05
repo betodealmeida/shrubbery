@@ -1,0 +1,12 @@
+Shrubbery can be installed with a simple::
+
+    python setup.py install
+
+You'll need BeautifulSoup_ too. If you have EasyInstall_ installed, just type::
+
+    easy_install shrubbery
+
+And you're all set.
+
+_BeautifulSoup: http://www.crummy.com/software/BeautifulSoup/
+_EasyInstall: http://peak.telecommunity.com/DevCenter/EasyInstall

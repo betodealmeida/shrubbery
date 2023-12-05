@@ -1,0 +1,4 @@
+include docs/*
+include tests/*
+include examples/*
+include ez_setup.py

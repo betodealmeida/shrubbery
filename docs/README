@@ -1,0 +1,78 @@
+Shrubbery intends to be the world's easiest template language. It
+has two major advantages:
+
+1. The user doesn't need to learn a new syntax. Templates are simply
+   structural, and contain no code at all. Logic is dictated by the
+   data following an implicit -- though intuitive! -- algorithm.
+
+2. Templates don't have to be valid HTML/XHTML. Shrubbery uses the
+   wonderful BeautifulSoup module for the heavy lifting, and can
+   handle templates with broken HTML.
+
+So how does it work? Well, here's a simple template::
+
+    <html>
+        <head><title>{title}</title></head>
+        <body>
+            <ul>
+                <li>{todo.description} [{todo.category}]</li>
+            </ul>
+        </body>
+    </html>
+
+Let's apply some trivial data to this template::
+
+    >>> data = {"title": "Things I have to do",
+    ...         "todo": {"category": "Work",
+    ...                  "description": "Mow the lawn"}}
+    >>> from shrubbery.template import Template
+    >>> template = Template(THE_TEMPLATE_CODE_UP_THERE).process(data)
+
+Here, ``template`` is a typical BeautifulSoup tree. We can generate
+HTML from it::
+
+    >>> print template.prettify()
+
+And the result will be::
+
+    <html>
+     <head>
+      <title>
+       Things I have to do
+      </title>
+     </head>
+     <body>
+      <ul>
+       <li>
+        Mow the lawn [Work]
+       </li>
+      </ul>
+     </body>
+    </html>
+
+Hmmm... that was not very interesting, was it? The flexibility of
+Shrubbery comes from the fact that we can pass values as lists
+anywhere we want. Suppose we have more tasks, of different categories::
+
+    >>> data['todo'] = [
+    ...     {"category": "Work", "description": ["Mow the lawn", "Buy food"]},
+    ...     {"category": "Fun", "description": ["Program in Python", "Scuba dive", "Watch Heroes"]}]
+
+The result now will be something like this (I formatted it for
+clarity)::
+
+    <html>
+        <head><title>Things I have to do</title></head>
+        <body>
+            <ul>
+                <li>Mow the lawn [Work]</li>
+                <li>Buy food [Work]</li>
+                <li>Program in Python [Fun]</li>
+                <li>Scuba dive [Fun]</li>
+                <li>Watch Heroes [Fun]</li>
+            </ul>
+        </body>
+    </html>
+
+There are a couple of examples on the ``examples/`` directory, you
+can see more applications there.

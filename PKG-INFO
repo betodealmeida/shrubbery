@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: shrubbery
+Version: 0.3.4
+Summary: Simple and smart template engine to generate HTML/XML
+Home-page: http://taoetc.org/46
+Author: Roberto De Almeida
+Author-email: roberto@dealmeida.net
+License: MIT
+Download-URL: http://cheeseshop.python.org/packages/source/s/shrubbery/shrubbery-0.3.4.tar.gz
+Description: Shrubbery is a *Smart Html Renderer Using Blocks to Bind Expressions Repeatedly*. You can also think of it as the "world's easiest templating engine": Templates hold no logic whatsoever, with nodes being repeated implicitely as needed by the replacement data.
+        
+Keywords: json template html xml
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Text Processing :: Markup

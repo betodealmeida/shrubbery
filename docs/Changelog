@@ -1,0 +1,18 @@
+0.3.4 (2007-08-21 22:39:00 GMT)
+    Fixed a small bug in a specific case example.
+
+0.3.3 (2007-08-10 13:23:00 GMT)
+    Fixed a bug with indexing when mixing indexed and non-indexed
+    lists on the same template.
+
+0.3.2 (2007-08-02 17:17:18 GMT)
+    Lists can be indexed now in the templates.
+
+0.3.1 
+    Escape ``{}`` in regular expressions (to ``\{\}``), since it
+    fails with Python 2.4.
+    Escape text but not attributes in nodes.
+
+0.3 (2007-06-20 20:24:22 BRT)
+    Fixed a bug when the replacement string has a shrubbery tag.
+    Depending on the order a recursive replacement would occur.
